@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Men from "@/app/images/filter.png";
 import women from "@/app/images/filter (1).png";
-import div1 from "@/app/images/filter (2).png";
+import div1 from "@/app/images/girlbrown.jpg";
 import div2 from "@/app/images/filter (3).png";
 
 export default function Editors() {
