@@ -1,5 +1,5 @@
 import BlueHeader from "../app/components/blue-header";
-import Carausel from "../app/components/caraousel";
+import Caraousel from "./components/caraousel";
 import Editors from "../app/components/editorspick";
 import Navbar from "../app/components/navbar";
 import ProductCard from "../app/components/products-card";
@@ -15,7 +15,7 @@ export default function Home(){
     <div>
       <BlueHeader/>
       <Navbar/>
-      <Carausel/>
+       <Caraousel/>
       <Editors/>
       <ProductCard/>
       <GreenDiv/>
