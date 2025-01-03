@@ -3,15 +3,15 @@ import couples from "@/app/images/asian-woman-man-with-winter-clothes 1.png";
 
 export default function Whitediv() {
   return (
-    <div className="w-full h-auto absolute top-[3810px]">
+    <div className="relative w-full h-auto">
       <div className="w-full max-w-[1440px] flex flex-col lg:flex-row gap-[30px] px-4 lg:px-0">
         {/* Image Section */}
         <div className="relative w-full lg:w-[707px] h-[400px] lg:h-[682px] flex justify-center">
           <Image
             src={couples}
             alt="couple"
-            className="object-contain"
-            style={{ width: "100%", height: "auto" }}
+            className="object-cover"
+            style={{ width: "100%", height: "100%" }}
           />
         </div>
 

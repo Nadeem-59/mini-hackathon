@@ -32,7 +32,7 @@ export default function Lastdiv() {
   ];
 
   return (
-    <div className="bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 absolute top-[4400px]">
+    <div className="bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 relative">
       {/* Header Section */}
       <div className="text-center mb-12">
         <p className="text-blue-500 text-sm font-semibold uppercase">
