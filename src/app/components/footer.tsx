@@ -93,7 +93,7 @@ export default function footer() {
                 {/* Bottom Section */}
                 <section className="bg-[#FAFAFA] py-4">
                     <div className="max-w-screen-xl mx-auto flex justify-between items-center">
-                        <p className="text-[#727272] text-sm font-bold">Made with love by Ashna. All rights reserved.</p>
+                        <p className="text-[#727272] text-sm font-bold">Made with love by Mustabshira Khalid. All rights reserved.</p>
                         <div className="flex gap-4">
                            
                         </div>
