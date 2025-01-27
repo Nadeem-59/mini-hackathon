@@ -10,79 +10,76 @@ import { useState } from "react";
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <div className="w-full bg-white shadow-md lg:h-[70px]">
+    <nav className="w-full bg-white shadow-md">
       {/* Desktop Navbar */}
-      <div className="hidden lg:flex items-center justify-between px-8 lg:px-20 h-full">
+      <div className="hidden lg:flex justify-between items-center px-6 lg:px-16 h-16">
         {/* Logo */}
-        <h3 className="font-Montserrat font-semibold text-[24px]">Bandage</h3>
+        <h3 className="font-Montserrat font-semibold text-xl">Bandage</h3>
 
         {/* Menu Links */}
-        <ul className="flex gap-6 font-Montserrat font-semibold text-[14px] text-[#737373]">
+        <ul className="flex space-x-6 font-Montserrat text-sm text-gray-600">
           <li><Link href="/">Home</Link></li>
           <li><Link href="/shop">Shop</Link></li>
           <li><Link href="/about">About</Link></li>
-          <li><Link href="/blog">Blog</Link></li>
           <li><Link href="/contact">Contact</Link></li>
-          <li><Link href="/pages">Pages</Link></li>
+          <li><Link href="/blog">Blog</Link></li>
+
         </ul>
 
-        {/* Login and Icons */}
-        <div className="flex items-center gap-6">
-          <div className="flex items-center gap-2">
-            <Image src={user} alt="user" width={16} height={16} />
-            <span className="font-Montserrat font-semibold text-[14px] text-[#23A6F0]">
-              Login / Register
-            </span>
-          </div>
-          <div className="flex gap-4">
-            <Image src={search} alt="search" width={16} height={16} />
-            <Image src={cart} alt="cart" width={16} height={16} />
-            <Image src={mail} alt="mail" width={16} height={16} />
-          </div>
+        {/* Icons Section */}
+        <div className="flex space-x-4 items-center">
+          <Image src={user} alt="user" width={16} height={16} />
+          <Image src={search} alt="search" width={16} height={16} />
+          <Image src={cart} alt="cart" width={16} height={16} />
+          <Image src={mail} alt="mail" width={16} height={16} />
         </div>
       </div>
 
       {/* Mobile Navbar */}
-      <div className="lg:hidden flex items-center justify-between px-4 py-2 bg-[#252B42] text-white">
+      <div className="lg:hidden flex justify-between items-center px-4 py-3">
         {/* Logo */}
-        <h3 className="font-Montserrat font-semibold text-[24px]">Bandage</h3>
+        <h3 className="font-Montserrat font-semibold text-xl">Bandage</h3>
 
-        {/* Hamburger Menu */}
-        <div className="cursor-pointer" onClick={toggleMenu}>
-          <div className="w-[24px] h-[2px] bg-white mb-[5px]"></div>
-          <div className="w-[24px] h-[2px] bg-white mb-[5px]"></div>
-          <div className="w-[24px] h-[2px] bg-white"></div>
+        {/* Hamburger Menu for Mobile */}
+        <div className="md:hidden flex items-center">
+          <button onClick={toggleMenu} className="text-[#252B42]">
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
         </div>
       </div>
 
-      {/* Mobile Menu Content */}
-      <div
-        className={`${
-          isMenuOpen ? "block" : "hidden"
-        } lg:hidden absolute w-full bg-[#252B42] p-4 flex flex-col items-center text-white`}
-      >
-        <ul className="flex flex-col gap-4 font-Montserrat font-semibold text-[14px]">
-          <li><Link href="/">Home</Link></li>
-          <li><Link href="/shop">Shop</Link></li>
-          <li><Link href="/about">About</Link></li>
-          <li><Link href="/blog">Blog</Link></li>
-          <li><Link href="/contact">Contact</Link></li>
-          <li><Link href="/pages">Pages</Link></li>
-        </ul>
-
-        {/* Close Menu Button */}
-        <button
-          onClick={toggleMenu}
-          className="mt-4 text-[14px] font-Montserrat border border-white px-4 py-2 rounded"
-        >
-          Close Menu
-        </button>
-      </div>
-    </div>
+      {/* Mobile Menu Dropdown */}
+      {isMenuOpen && (
+        <div className="bg-[#bebebe] text-white flex flex-col items-center py-4 space-y-3">
+          <ul className="space-y-2 font-Montserrat text-base text-black">
+            <li><Link href="/">Home</Link></li>
+            <li><Link href="/shop">Shop</Link></li>
+            <li><Link href="/about">About</Link></li>
+            <li><Link href="/blog">Blog</Link></li>
+            <li><Link href="/contact">Contact</Link></li>
+            <li><Link href="/pages">Pages</Link></li>
+          </ul>
+          <button onClick={toggleMenu} className="text-sm text-black font-Montserrat">
+           - Close Menu -
+          </button>
+        </div>
+      )}
+    </nav>
   );
 }
